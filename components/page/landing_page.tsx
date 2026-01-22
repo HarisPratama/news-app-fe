@@ -84,10 +84,12 @@ function LandingPage() {
                         </h1>
 
                         <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                            Official Distributor of Aluminium Composite Panels and Silicone Sealants, delivering trusted quality ACP and sealants at competitive prices.
+                            Official Distributor of Aluminium Composite Panels and Silicone Sealants, delivering trusted
+                            quality ACP and sealants at competitive prices.
                         </p>
 
-                        <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 transition transform hover:scale-105">
+                        <button
+                            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 transition transform hover:scale-105">
                             LEARN MORE
                         </button>
 
@@ -99,10 +101,11 @@ function LandingPage() {
                 </div>
 
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-                    <ChevronDown className="w-8 h-8 text-orange-500" />
+                    <ChevronDown className="w-8 h-8 text-orange-500"/>
                 </div>
 
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-12 border-l-4 border-r-4 border-orange-500 border-b-4 opacity-30"></div>
+                <div
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-12 border-l-4 border-r-4 border-orange-500 border-b-4 opacity-30"></div>
             </section>
 
             {/* Recent Works Section */}
@@ -113,7 +116,9 @@ function LandingPage() {
                     </h2>
 
                     <p className="text-center text-gray-600 max-w-3xl mx-auto mb-16">
-                        Explore our latest projects in supplying and installing Aluminium Composite Panels for commercial buildings, offices, and industrial facilities. Each project reflects our commitment to quality, precision, and reliable results.
+                        Explore our latest projects in supplying and installing Aluminium Composite Panels for
+                        commercial buildings, offices, and industrial facilities. Each project reflects our commitment
+                        to quality, precision, and reliable results.
                     </p>
 
                     {/* Carousel */}
@@ -160,7 +165,8 @@ function LandingPage() {
                                             alt={project.title}
                                             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
+                                        <div
+                                            className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
                                             <h3 className="text-white font-bold text-xl">{project.title}</h3>
                                         </div>
                                     </div>
@@ -173,13 +179,13 @@ function LandingPage() {
                             onClick={prevSlide}
                             className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 z-20 bg-black hover:bg-orange-500 text-white rounded-full p-3 transition"
                         >
-                            <ChevronLeft className="w-6 h-6" />
+                            <ChevronLeft className="w-6 h-6"/>
                         </button>
                         <button
                             onClick={nextSlide}
                             className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 z-20 bg-black hover:bg-orange-500 text-white rounded-full p-3 transition"
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRight className="w-6 h-6"/>
                         </button>
                     </div>
                 </div>
@@ -236,7 +242,7 @@ function LandingPage() {
                     <div className="grid grid-cols-2 gap-16 items-start">
                         <div>
                             <h2 className="text-4xl font-bold mb-12 leading-tight">
-                                Our Products Offer<br />Powerful Benefits That<br />Make Your Projects Better
+                                Our Products Offer<br/>Powerful Benefits That<br/>Make Your Projects Better
                             </h2>
 
                             <div className="space-y-6">
@@ -249,7 +255,7 @@ function LandingPage() {
                                 ].map((benefit, index) => (
                                     <div key={index} className="flex items-start gap-4">
                                         <div className="flex-shrink-0 mt-1">
-                                            <Check className="w-6 h-6 text-green-500" />
+                                            <Check className="w-6 h-6 text-green-500"/>
                                         </div>
                                         <span className="text-gray-800 font-medium">{benefit}</span>
                                     </div>
@@ -276,13 +282,15 @@ function LandingPage() {
                                     image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1200"
                                 }
                             ].map((item, index) => (
-                                <div key={index} className="relative group rounded-2xl overflow-hidden cursor-pointer h-64">
+                                <div key={index}
+                                     className="relative group rounded-2xl overflow-hidden cursor-pointer h-64">
                                     <img
                                         src={item.image}
                                         alt={item.title}
                                         className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                                         <h3 className="text-white font-bold text-lg">{item.title}</h3>
                                     </div>
                                 </div>
@@ -291,6 +299,272 @@ function LandingPage() {
                     </div>
                 </div>
             </section>
+
+            {/*  Who we work sith  */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    <h2 className="text-center text-2xl font-semibold mb-12">
+                        Who We Work With
+                    </h2>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div className="flex items-center justify-center border bg-gray-100 h-40">
+                            <img
+                                src="https://proav.co.id/wp-content/uploads/2023/10/logo-MRT_Jakarta_vertical-x400.webp"
+                                alt="MRT Jakarta" className="max-h-20 object-contain"/>
+                        </div>
+
+                        <div className="flex items-center justify-center border bg-gray-100 h-40">
+                            <img
+                                src="https://iconlogovector.com/uploads/images/2024/03/lg-65e38a127729f-LRT-Jakarta.webp"
+                                alt="LRT Jakarta" className="max-h-16 object-contain"/>
+                        </div>
+
+                        <div className="flex items-center justify-center border bg-gray-100 h-40">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Sinar_Mas_Land_Logo.png"
+                                 alt="Sinarmas Land" className="max-h-12 object-contain"/>
+                        </div>
+
+                        <div className="flex items-center justify-center border bg-gray-100 h-40">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/1280px-Bank_Syariah_Indonesia.svg.png"
+                                alt="BSI" className="max-h-20 object-contain"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/*  Our Happy Client  */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    <h2 className="text-center text-2xl font-semibold mb-12">
+                        Our Happy Clients
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="bg-black text-white rounded-2xl p-6">
+                            <div className="flex text-orange-400 mb-4">
+                                ★★★★★
+                            </div>
+
+                            <p className="text-sm leading-relaxed mb-6 text-gray-200">
+                                Tidak digarukan lagi, kualitas ACP Goodsense sangat cocok
+                                untuk bangunan yang sedang kami kerjakan, sukses selalu...
+                            </p>
+
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                                    alt="Evelin Bie"
+                                    className="w-10 h-10 rounded-full object-cover"
+                                />
+                                <div>
+                                    <p className="text-sm font-semibold">Evelin Bie</p>
+                                    <p className="text-xs text-gray-400">Full-Time Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-black text-white rounded-2xl p-6">
+                            <div className="flex text-orange-400 mb-4">★★★★★</div>
+                            <p className="text-sm leading-relaxed mb-6 text-gray-200">
+                                Price was too low yet luxury.
+                            </p>
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                                    className="w-10 h-10 rounded-full"/>
+                                <div>
+                                    <p className="text-sm font-semibold">Evelin Bie</p>
+                                    <p className="text-xs text-gray-400">Full-Time Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-black text-white rounded-2xl p-6">
+                            <div className="flex text-orange-400 mb-4">★★★★★</div>
+                            <p className="text-sm leading-relaxed mb-6 text-gray-200">
+                                It’s just amazing, will be back.
+                            </p>
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                                    className="w-10 h-10 rounded-full"/>
+                                <div>
+                                    <p className="text-sm font-semibold">Evelin Bie</p>
+                                    <p className="text-xs text-gray-400">Full-Time Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-black text-white rounded-2xl p-6">
+                            <div className="flex text-orange-400 mb-4">★★★★★</div>
+                            <p className="text-sm leading-relaxed mb-6 text-gray-200">
+                                It’s just amazing, will be back.
+                            </p>
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                                    className="w-10 h-10 rounded-full"/>
+                                <div>
+                                    <p className="text-sm font-semibold">Evelin Bie</p>
+                                    <p className="text-xs text-gray-400">Full-Time Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-black text-white rounded-2xl p-6">
+                            <div className="flex text-orange-400 mb-4">
+                                ★★★★★
+                            </div>
+
+                            <p className="text-sm leading-relaxed mb-6 text-gray-200">
+                                Tidak digarukan lagi, kualitas ACP Goodsense sangat cocok
+                                untuk bangunan yang sedang kami kerjakan, sukses selalu...
+                            </p>
+
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                                    alt="Evelin Bie"
+                                    className="w-10 h-10 rounded-full object-cover"
+                                />
+                                <div>
+                                    <p className="text-sm font-semibold">Evelin Bie</p>
+                                    <p className="text-xs text-gray-400">Full-Time Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-black text-white rounded-2xl p-6">
+                            <div className="flex text-orange-400 mb-4">
+                                ★★★★★
+                            </div>
+
+                            <p className="text-sm leading-relaxed mb-6 text-gray-200">
+                                Tidak digarukan lagi, kualitas ACP Goodsense sangat cocok
+                                untuk bangunan yang sedang kami kerjakan, sukses selalu...
+                            </p>
+
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+                                    alt="Evelin Bie"
+                                    className="w-10 h-10 rounded-full object-cover"
+                                />
+                                <div>
+                                    <p className="text-sm font-semibold">Evelin Bie</p>
+                                    <p className="text-xs text-gray-400">Full-Time Traveler</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            {/*  Support / FAQ Section  */}
+            <section className="py-20 bg-white">
+                <div className="max-w-5xl mx-auto px-4">
+                    <h2 className="text-2xl font-semibold mb-10">Support</h2>
+
+                    <div className="space-y-6">
+                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
+                            <p className="font-medium">
+                                What is Aluminium Composite Panel (ACP)?
+                            </p>
+                            <span className="text-xl">›</span>
+                        </div>
+
+                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
+                            <p className="font-medium">
+                                What are ACP panels commonly used for?
+                            </p>
+                            <span className="text-xl">›</span>
+                        </div>
+
+                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
+                            <p className="font-medium max-w-xl">
+                                What are the advantages of using ACP compared to other materials?
+                            </p>
+                            <span className="text-xl">›</span>
+                        </div>
+
+                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
+                            <p className="font-medium">
+                                What ACP thickness options do you provide?
+                            </p>
+                            <span className="text-xl">›</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/*  Footer Section  */}
+            <footer className="bg-black text-gray-400 pt-16">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+
+                        <div>
+                            <h4 className="text-white font-semibold mb-4">Solutions</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li>Credit Rewards</li>
+                                <li>Open for Listing</li>
+                                <li>AI Automation</li>
+                                <li>APIs Developer</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 className="text-white font-semibold mb-4">Product</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li>Featured House</li>
+                                <li>Browse Categories</li>
+                                <li className="text-orange-500 font-medium">Special Awards</li>
+                                <li>Made-in Bandung</li>
+                                <li>Exclusive Style</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 className="text-white font-semibold mb-4">Company</h4>
+                            <ul className="space-y-2 text-sm">
+                                <li>About Us</li>
+                                <li>Our Investors</li>
+                                <li>Careers</li>
+                                <li>Media Press</li>
+                            </ul>
+                        </div>
+
+                        <div className="md:col-span-2">
+                            <h4 className="text-white font-semibold mb-4">NEWSLETTER</h4>
+
+                            <div className="flex bg-white rounded-full overflow-hidden mb-6">
+                                <input
+                                    type="email"
+                                    placeholder="Email Address"
+                                    className="flex-1 px-5 py-3 text-sm text-black outline-none"
+                                />
+                                <button className="bg-orange-500 text-black px-6 font-semibold">
+                                    Subscribe
+                                </button>
+                            </div>
+
+                            <p className="text-sm text-white mb-2">Choose Language</p>
+                            <div className="flex items-center gap-2 text-sm">
+                                <span>🇬🇧</span>
+                                <span className="text-white">English (UK)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-center">
+                        © 2026 All rights reserved.
+                    </div>
+                </div>
+            </footer>
+
+
         </div>
     );
 }
