@@ -2,6 +2,9 @@
 
 import {ChevronLeft, ChevronRight, ChevronDown, Check} from 'lucide-react';
 import { useState } from 'react';
+import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
+import { Accordion } from '@radix-ui/react-accordion';
+import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 
 function LandingPage() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,6 +27,11 @@ function LandingPage() {
         },
         {
             id: 4,
+            title: "Mabes Polri Presisi 3",
+            image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        },
+        {
+            id: 5,
             title: "Mabes Polri Presisi 3",
             image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1200"
         }
@@ -77,29 +85,39 @@ function LandingPage() {
                     <div className="absolute inset-0 bg-black/60"></div>
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col justify-center max-w-7xl mx-auto px-6">
-                    <div className="max-w-2xl">
-                        <h1 className="text-6xl font-bold text-white mb-6 leading-tight">
-                            PT GRHA SINAR ARYA
-                        </h1>
+                <Carousel
+                    opts={{
+                        align: "center",
+                    }}
+                    className="w-full"
+                >
+                    <CarouselContent>
+                        <CarouselItem>
+                            <div className="relative z-10 h-screen flex flex-col justify-center max-w-7xl mx-auto px-6">
+                                <div className="max-w-2xl">
+                                    <h1 className="text-6xl font-bold text-white mb-6 leading-tight">
+                                        PT GRHA SINAR ARYA
+                                    </h1>
 
-                        <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                            Official Distributor of Aluminium Composite Panels and Silicone Sealants, delivering trusted
-                            quality ACP and sealants at competitive prices.
-                        </p>
+                                    <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                                        Official Distributor of Aluminium Composite Panels and Silicone Sealants, delivering trusted
+                                        quality ACP and sealants at competitive prices.
+                                    </p>
 
-                        <button
-                            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 transition transform hover:scale-105">
-                            LEARN MORE
-                        </button>
+                                    <button
+                                        className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 transition transform hover:scale-105">
+                                        LEARN MORE
+                                    </button>
 
-                        <div className="flex items-center gap-4 mt-12">
-                            <div className="w-8 h-1 bg-white"></div>
-                            <div className="w-16 h-1 bg-orange-500"></div>
-                        </div>
-                    </div>
-                </div>
-
+                                    <div className="flex items-center gap-4 mt-12">
+                                        <div className="w-8 h-1 bg-white"></div>
+                                        <div className="w-16 h-1 bg-orange-500"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                    </CarouselContent>
+                </Carousel>
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
                     <ChevronDown className="w-8 h-8 text-orange-500"/>
                 </div>
@@ -109,7 +127,7 @@ function LandingPage() {
             </section>
 
             {/* Recent Works Section */}
-            <section id="proyek" className="py-20 px-6">
+            <section id="proyek" className="h-screen overflow-hidden py-20 px-6">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-4xl font-bold text-center text-orange-500 mb-4">
                         Our Recent Works
@@ -122,71 +140,41 @@ function LandingPage() {
                     </p>
 
                     {/* Carousel */}
-                    <div className="relative">
-                        {/*<div className="grid grid-cols-4 gap-6 overflow-hidden">*/}
-                        {/*    {projects.map((project, index) => {*/}
-                        {/*        const displayIndex = (index - currentSlide + projects.length) % projects.length;*/}
-                        {/*        const isActive = displayIndex === 0;*/}
-
-                        {/*        if (displayIndex > 0) return null;*/}
-
-                        {/*        return (*/}
-                        {/*            <div*/}
-                        {/*                key={project.id}*/}
-                        {/*                className={`rounded-xl overflow-hidden transition-all duration-300 ${*/}
-                        {/*                    isActive ? 'col-span-1' : 'hidden'*/}
-                        {/*                }`}*/}
-                        {/*            >*/}
-                        {/*                <div className="relative h-64 group">*/}
-                        {/*                    <img*/}
-                        {/*                        src={project.image}*/}
-                        {/*                        alt={project.title}*/}
-                        {/*                        className="w-full h-full object-cover group-hover:scale-105 transition duration-300"*/}
-                        {/*                    />*/}
-                        {/*                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">*/}
-                        {/*                        <h3 className="text-white font-bold text-lg">{project.title}</h3>*/}
-                        {/*                    </div>*/}
-                        {/*                </div>*/}
-                        {/*            </div>*/}
-                        {/*        );*/}
-                        {/*    })}*/}
-                        {/*</div>*/}
+                    <div className="">
 
                         {/* Multi-card view */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-0">
-                            {projects.map((project) => (
-                                <div
-                                    key={project.id}
-                                    className="rounded-2xl overflow-hidden group cursor-pointer"
-                                >
-                                    <div className="relative h-72">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-                                        />
-                                        <div
-                                            className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
-                                            <h3 className="text-white font-bold text-xl">{project.title}</h3>
+                        <Carousel
+                            opts={{
+                                align: "center",
+                                loop: true,
+                            }}
+                            className="w-full"
+                        >
+                            <CarouselContent>
+                                {projects.map((project) => (
+                                    <CarouselItem
+                                        key={project.id}
+                                        className="basis-1/1 lg:basis-1/4"
+                                    >
+                                        <div className="relative h-full w-[260px]">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                                            />
+                                            <div
+                                                className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-6">
+                                                <h3 className="text-white font-bold text-xl">{project.title}</h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious/>
+                            <CarouselNext/>
+                        </Carousel>
 
                         {/* Navigation Buttons */}
-                        <button
-                            onClick={prevSlide}
-                            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-16 z-20 bg-black hover:bg-orange-500 text-white rounded-full p-3 transition"
-                        >
-                            <ChevronLeft className="w-6 h-6"/>
-                        </button>
-                        <button
-                            onClick={nextSlide}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-16 z-20 bg-black hover:bg-orange-500 text-white rounded-full p-3 transition"
-                        >
-                            <ChevronRight className="w-6 h-6"/>
-                        </button>
                     </div>
                 </div>
             </section>
@@ -469,33 +457,40 @@ function LandingPage() {
                     <h2 className="text-2xl font-semibold mb-10">Support</h2>
 
                     <div className="space-y-6">
-                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
-                            <p className="font-medium">
-                                What is Aluminium Composite Panel (ACP)?
-                            </p>
-                            <span className="text-xl">›</span>
-                        </div>
+                        <Accordion
+                            type="single"
+                            collapsible
+                            defaultValue="shipping"
+                            className="max-w-lg"
+                        >
+                            <AccordionItem value="shipping">
+                                <AccordionTrigger>
+                                    What is Aluminium Composite Panel (ACP)?
+                                </AccordionTrigger>
+                                <AccordionContent></AccordionContent>
+                            </AccordionItem>
 
-                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
-                            <p className="font-medium">
-                                What are ACP panels commonly used for?
-                            </p>
-                            <span className="text-xl">›</span>
-                        </div>
+                            <AccordionItem value="returns">
+                                <AccordionTrigger>
+                                    What are ACP panels commonly used for?
+                                </AccordionTrigger>
+                                <AccordionContent></AccordionContent>
+                            </AccordionItem>
 
-                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
-                            <p className="font-medium max-w-xl">
-                                What are the advantages of using ACP compared to other materials?
-                            </p>
-                            <span className="text-xl">›</span>
-                        </div>
+                            <AccordionItem value="suport">
+                                <AccordionTrigger>
+                                    What are the advantages of using ACP compared to other materials?
+                                </AccordionTrigger>
+                                <AccordionContent></AccordionContent>
+                            </AccordionItem>
 
-                        <div className="flex items-center justify-between border-b pb-4 cursor-pointer">
-                            <p className="font-medium">
-                                What ACP thickness options do you provide?
-                            </p>
-                            <span className="text-xl">›</span>
-                        </div>
+                            <AccordionItem value="question">
+                                <AccordionTrigger>
+                                    What ACP thickness options do you provide?
+                                </AccordionTrigger>
+                                <AccordionContent></AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
                     </div>
                 </div>
             </section>
