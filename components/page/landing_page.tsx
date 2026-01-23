@@ -580,7 +580,7 @@ function LandingPage() {
                             </ul>
                         </div>
 
-                        <div className="md:col-span-2">
+                        <div className="hidden md:block md:col-span-2">
                             <h4 className="text-white font-semibold mb-4">NEWSLETTER</h4>
 
                             <div className="flex bg-white rounded-full overflow-hidden mb-6">
@@ -599,6 +599,27 @@ function LandingPage() {
                                 <span>🇬🇧</span>
                                 <span className="text-white">English (UK)</span>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className="md:hidden mt-8">
+                        <h4 className="text-white font-semibold mb-4">NEWSLETTER</h4>
+
+                        <div className="flex bg-white rounded-full overflow-hidden mb-6">
+                            <input
+                                type="email"
+                                placeholder="Email Address"
+                                className="flex-1 px-5 py-3 text-sm text-black outline-none"
+                            />
+                            <button className="bg-orange-500 text-black px-6 font-semibold">
+                                Subscribe
+                            </button>
+                        </div>
+
+                        <p className="text-sm text-white mb-2">Choose Language</p>
+                        <div className="flex items-center gap-2 text-sm">
+                            <span>🇬🇧</span>
+                            <span className="text-white">English (UK)</span>
                         </div>
                     </div>
 
