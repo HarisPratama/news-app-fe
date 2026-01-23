@@ -1,13 +1,28 @@
 "use client"
 
-import {ChevronLeft, ChevronRight, ChevronDown, Check} from 'lucide-react';
-import { useState } from 'react';
+import {ChevronDown, Check} from 'lucide-react';
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 import { Accordion } from '@radix-ui/react-accordion';
 import {AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList, navigationMenuTriggerStyle
+} from "@/components/ui/navigation-menu";
+import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger
+} from "@/components/ui/drawer";
+import {Button} from "@/components/ui/button";
 
 function LandingPage() {
-    const [currentSlide, setCurrentSlide] = useState(0);
 
     const projects = [
         {
@@ -37,21 +52,13 @@ function LandingPage() {
         }
     ];
 
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % projects.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + projects.length) % projects.length);
-    };
-
     return (
         <div className="min-h-screen bg-white">
             {/* Header */}
             <header className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="grid grid-cols-3 gap-1">
+                        <div className="hidden md:grid md:grid-cols-3 gap-1">
                             <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
@@ -62,15 +69,57 @@ function LandingPage() {
                             <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                             <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                         </div>
+                        <div className="md:hidden">
+                            <Drawer direction={"left"}>
+                                <DrawerTrigger>
+                                    <div className="grid grid-cols-3 gap-1">
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                        <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                                    </div>
+                                </DrawerTrigger>
+                                <DrawerContent>
+                                    <DrawerHeader>
+                                        <DrawerTitle>PT GRHA SINAR ARYA</DrawerTitle>
+                                    </DrawerHeader>
+                                    <div className="p-4 pb-0">
+                                        <nav className="flex flex-col gap-8  text-sm font-medium">
+                                            <a href="#beranda" className="hover:text-orange-500 transition">Beranda</a>
+                                            <a href="#proyek" className="hover:text-orange-500 transition">Proyek</a>
+                                            <a href="#produk" className="hover:text-orange-500 transition">Produk</a>
+                                            <a href="#tentang" className="hover:text-orange-500 transition">Tentang Kami</a>
+                                            <a href="#kontak" className="hover:text-orange-500 transition">Kontak</a>
+                                        </nav>
+                                    </div>
+                                    <DrawerFooter>
+                                        <div className="border-t pb-4 mt-12 pt-6 text-sm text-center">
+                                            © All Rights Reserved GSA Indonesia 2026
+                                        </div>
+                                    </DrawerFooter>
+                                </DrawerContent>
+                            </Drawer>
+                        </div>
                     </div>
 
-                    <nav className="flex gap-8 text-white text-sm font-medium">
-                        <a href="#beranda" className="hover:text-orange-500 transition">Beranda</a>
-                        <a href="#proyek" className="hover:text-orange-500 transition">Proyek</a>
-                        <a href="#produk" className="hover:text-orange-500 transition">Produk</a>
-                        <a href="#tentang" className="hover:text-orange-500 transition">Tentang Kami</a>
-                        <a href="#kontak" className="hover:text-orange-500 transition">Kontak</a>
-                    </nav>
+                    <div className="hidden lg:block">
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#beranda">Beranda</NavigationMenuLink>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#proyek">Proyek</NavigationMenuLink>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#produk">Produk</NavigationMenuLink>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#tentang">Tentang Kami</NavigationMenuLink>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#kontak">Kontak</NavigationMenuLink>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                    </div>
                 </div>
             </header>
 
@@ -186,7 +235,7 @@ function LandingPage() {
                         Favored by forward-thinking companies
                     </h2>
 
-                    <div className="grid grid-cols-5 gap-8 items-center justify-items-center">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
                         {[1, 2, 3, 4, 5].map((item) => (
                             <div key={item} className="flex items-center gap-3 text-gray-400">
                                 <div className="w-10 h-10 bg-gray-700 rounded-full"></div>
@@ -200,7 +249,7 @@ function LandingPage() {
             {/* Products Section */}
             <section id="produk" className="bg-gray-900 py-20 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-3 gap-12">
+                    <div className="grid md:grid-cols-3 gap-12">
                         {[
                             {
                                 title: "ACP GOODSENSE",
@@ -227,7 +276,7 @@ function LandingPage() {
             {/* Benefits Section */}
             <section className="py-20 px-6 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 gap-16 items-start">
+                    <div className="grid md:grid-cols-2 gap-16 items-start">
                         <div>
                             <h2 className="text-4xl font-bold mb-12 leading-tight">
                                 Our Products Offer<br/>Powerful Benefits That<br/>Make Your Projects Better
@@ -553,13 +602,11 @@ function LandingPage() {
                         </div>
                     </div>
 
-                    <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-center">
-                        © 2026 All rights reserved.
+                    <div className="border-t pb-4 mt-12 pt-6 text-sm text-center">
+                        © All Rights Reserved GSA Indonesia 2026
                     </div>
                 </div>
             </footer>
-
-
         </div>
     );
 }
