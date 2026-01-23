@@ -205,7 +205,7 @@ function LandingPage() {
                                         key={project.id}
                                         className="basis-1/1 lg:basis-1/4"
                                     >
-                                        <div className="relative h-full w-[260px]">
+                                        <div className="relative h-full w-full md:w-[260px]">
                                             <img
                                                 src={project.image}
                                                 alt={project.title}
