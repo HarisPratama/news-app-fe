@@ -547,7 +547,7 @@ function LandingPage() {
             {/*  Footer Section  */}
             <footer className="bg-black text-gray-400 pt-16">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
 
                         <div>
                             <h4 className="text-white font-semibold mb-4">Solutions</h4>
